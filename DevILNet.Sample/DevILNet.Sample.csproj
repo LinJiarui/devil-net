@@ -66,6 +66,24 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -124,10 +142,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "$(TargetDir)\DevIL\$(Platform)\"
-copy /Y "$(SolutionDir)\Libs\$(Platform)\DevIL.dll" "$(TargetDir)\DevIL\$(Platform)\DevIL.dll"
-copy /Y "$(SolutionDir)\Libs\$(Platform)\ILU.dll" "$(TargetDir)\DevIL\$(Platform)\ILU.dll"
-copy /Y "$(SolutionDir)\Libs\DevIL_License.txt" "$(TargetDir)DevIL_License.txt"</PostBuildEvent>
+    <PostBuildEvent>mkdir "$(TargetDir)\DevIL\x86\"
+mkdir "$(TargetDir)\DevIL\x64\"
+copy /Y "$(SolutionDir)\Libs\x86\DevIL.dll" "$(TargetDir)\DevIL\x86\DevIL.dll"
+copy /Y "$(SolutionDir)\Libs\x86\ILU.dll" "$(TargetDir)\DevIL\x86\ILU.dll"
+copy /Y "$(SolutionDir)\Libs\x64\DevIL.dll" "$(TargetDir)\DevIL\x64\DevIL.dll"
+copy /Y "$(SolutionDir)\Libs\x64\ILU.dll" "$(TargetDir)\DevIL\x64\ILU.dll"
+copy /Y "$(SolutionDir)\Libs\DevIL_License.txt" "$(TargetDir)\DevIL\DevIL_License.txt"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
