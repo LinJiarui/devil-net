@@ -11,7 +11,8 @@
     <RootNamespace>DevIL.Sample</RootNamespace>
     <AssemblyName>DevIL.Sample</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -99,6 +100,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,11 +124,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(SolutionDir)\Libs\DevIL_License.txt" "$(TargetDir)DevIL_License.txt"
-copy /Y "$(SolutionDir)\Libs\x64\DevIL.dll" "$(TargetDir)DevIL64.dll"
-copy /Y "$(SolutionDir)\Libs\x64\ILU.dll" "$(TargetDir)ILU64.dll"
-copy /Y "$(SolutionDir)\Libs\x86\DevIL.dll" "$(TargetDir)DevIL32.dll"
-copy /Y "$(SolutionDir)\Libs\x86\ILU.dll" "$(TargetDir)ILU32.dll"</PostBuildEvent>
+    <PostBuildEvent>mkdir "$(TargetDir)\DevIL\$(Platform)\"
+copy /Y "$(SolutionDir)\Libs\$(Platform)\DevIL.dll" "$(TargetDir)\DevIL\$(Platform)\DevIL.dll"
+copy /Y "$(SolutionDir)\Libs\$(Platform)\ILU.dll" "$(TargetDir)\DevIL\$(Platform)\ILU.dll"
+copy /Y "$(SolutionDir)\Libs\DevIL_License.txt" "$(TargetDir)DevIL_License.txt"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -565,7 +565,7 @@ namespace DevIL.Unmanaged
         #endregion
 
         #region native x64
-        private const String ILUDLL_x64 = "ILU64.dll";
+        private const String ILUDLL_x64 = "./DevIL/x64/ILU.dll";
 
         [DllImport(ILUDLL_x64, EntryPoint = "iluInit", CallingConvention = CallingConvention.StdCall)]
         private static extern void iluInit_x64();
@@ -728,7 +728,7 @@ namespace DevIL.Unmanaged
         #endregion
 
         #region native x32
-        private const String ILUDLL_x32 = "ILU32.dll";
+        private const String ILUDLL_x32 = "./DevIL/x86/ILU.dll";
 
         [DllImport(ILUDLL_x32, EntryPoint = "iluInit", CallingConvention = CallingConvention.StdCall)]
         private static extern void iluInit_x32();

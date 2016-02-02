@@ -1699,7 +1699,7 @@ namespace DevIL.Unmanaged
         #endregion
 
         #region native x64
-        private const String ILDLL_x64 = "DevIL64.dll";
+        private const String ILDLL_x64 = "./DevIL/x64/DevIL.dll";
 
         [DllImportAttribute(ILDLL_x64, EntryPoint = "ilClampNTSC", CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -2043,7 +2043,7 @@ namespace DevIL.Unmanaged
         #endregion
 
         #region native x32
-        private const String ILDLL_x32 = "DevIL32.dll";
+        private const String ILDLL_x32 = "./DevIL/x86/DevIL.dll";
         [DllImportAttribute(ILDLL_x32, EntryPoint = "ilClampNTSC", CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.U1)]
         private static extern bool ilClampNTSC_x32();
