@@ -130,11 +130,11 @@
   <PropertyGroup>
     <PostBuildEvent>mkdir -p "$(TargetDir)DevIL\x86\"
 mkdir -p "$(TargetDir)DevIL\x64\"
-copy /Y "$(SolutionDir)Libs\x86\DevIL.dll" "$(TargetDir)DevIL\x86\DevIL.dll"
-copy /Y "$(SolutionDir)Libs\x86\ILU.dll" "$(TargetDir)DevIL\x86\ILU.dll"
-copy /Y "$(SolutionDir)Libs\x64\DevIL.dll" "$(TargetDir)DevIL\x64\DevIL.dll"
-copy /Y "$(SolutionDir)Libs\x64\ILU.dll" "$(TargetDir)DevIL\x64\ILU.dll"
-copy /Y "$(SolutionDir)Libs\DevIL_License.txt" "$(TargetDir)DevIL\DevIL_License.txt"</PostBuildEvent>
+cp -u "$(SolutionDir)Libs\x86\DevIL.dll" "$(TargetDir)DevIL\x86\DevIL.dll"
+cp -u "$(SolutionDir)Libs\x86\ILU.dll" "$(TargetDir)DevIL\x86\ILU.dll"
+cp -u "$(SolutionDir)Libs\x64\DevIL.dll" "$(TargetDir)DevIL\x64\DevIL.dll"
+cp -u "$(SolutionDir)Libs\x64\ILU.dll" "$(TargetDir)DevIL\x64\ILU.dll"
+cp -u "$(SolutionDir)Libs\DevIL_License.txt" "$(TargetDir)DevIL\DevIL_License.txt"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
