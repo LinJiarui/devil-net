@@ -142,8 +142,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "$(TargetDir)\DevIL\x86\"
-mkdir "$(TargetDir)\DevIL\x64\"
+    <PostBuildEvent>mkdir -p "$(TargetDir)\DevIL\x86\"
+mkdir -p "$(TargetDir)\DevIL\x64\"
 copy /Y "$(SolutionDir)\Libs\x86\DevIL.dll" "$(TargetDir)\DevIL\x86\DevIL.dll"
 copy /Y "$(SolutionDir)\Libs\x86\ILU.dll" "$(TargetDir)\DevIL\x86\ILU.dll"
 copy /Y "$(SolutionDir)\Libs\x64\DevIL.dll" "$(TargetDir)\DevIL\x64\DevIL.dll"
