@@ -1301,7 +1301,7 @@ namespace DevIL.Unmanaged
             }
         }
 
-        #region native Method wrapper
+        #region native method wrapper
 
         public static bool ClampNTSC()
         {

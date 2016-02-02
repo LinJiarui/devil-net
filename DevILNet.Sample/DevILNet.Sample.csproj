@@ -122,9 +122,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(SolutionDir)\Libs\$(Platform)\DevIL.dll" "$(TargetDir)DevIL.dll"
-copy /Y "$(SolutionDir)\Libs\$(Platform)\ILU.dll" "$(TargetDir)ILU.dll"
-copy /Y "$(SolutionDir)\Libs\DevIL_License.txt" "$(TargetDir)DevIL_License.txt"
+    <PostBuildEvent>copy /Y "$(SolutionDir)\Libs\DevIL_License.txt" "$(TargetDir)DevIL_License.txt"
 copy /Y "$(SolutionDir)\Libs\x64\DevIL.dll" "$(TargetDir)DevIL64.dll"
 copy /Y "$(SolutionDir)\Libs\x64\ILU.dll" "$(TargetDir)ILU64.dll"
 copy /Y "$(SolutionDir)\Libs\x86\DevIL.dll" "$(TargetDir)DevIL32.dll"
